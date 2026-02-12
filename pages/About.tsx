@@ -32,7 +32,7 @@ export const About: React.FC = () => {
             <div className="lg:w-1/2 relative">
               <div className="absolute inset-0 bg-brand-gold rounded-[3rem] transform -rotate-3 scale-95 opacity-10"></div>
               <img
-                src="https://picsum.photos/seed/consultant/800/1000"
+                src="/assets/businessman-standing-outside-office-building.jpg"
                 alt="Our Founder"
                 className="relative z-10 w-full rounded-[3rem] shadow-2xl object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />

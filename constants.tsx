@@ -39,7 +39,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     solution: 'Implemented automated inventory tracking and demand forecasting.',
     result: 'Reduced holding costs by 25% while maintaining 99% stock availability.',
     metric: '+25% Profitability',
-    image: 'https://picsum.photos/seed/retail/800/600'
+    image: '/assets/supply-chain.jpg'
   },
   {
     id: '2',
@@ -49,7 +49,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     solution: 'Cloud-based document automation and CRM integration.',
     result: 'Reduced onboarding time from 3 days to 4 hours.',
     metric: '95% Faster Onboarding',
-    image: 'https://picsum.photos/seed/legal/800/600'
+    image: '/assets/digital-trans.jpg'
   }
 ];
 

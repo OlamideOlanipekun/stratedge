@@ -24,7 +24,7 @@ export const Services: React.FC = () => {
       </div>
 
       <div className="w-full px-6 md:px-12 lg:px-20 xl:px-32">
-        <motion.div 
+        <motion.div
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
@@ -45,25 +45,24 @@ export const Services: React.FC = () => {
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={staggerContainer}
-              className={`flex flex-col lg:flex-row items-center gap-16 lg:gap-32 w-full ${
-                index % 2 !== 0 ? 'lg:flex-row-reverse' : ''
-              }`}
+              className={`flex flex-col lg:flex-row items-center gap-16 lg:gap-32 w-full ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''
+                }`}
             >
               <div className="w-full lg:w-3/5 relative">
-                <motion.div 
+                <motion.div
                   variants={fadeUp}
                   className="relative group"
                 >
                   <div className="absolute -inset-8 bg-brand-light rounded-[4rem] -z-10 group-hover:bg-brand-gold/5 transition-colors duration-700"></div>
                   <div className="relative aspect-[16/9] lg:aspect-[16/10] overflow-hidden rounded-[3rem] shadow-2xl border-8 border-white">
                     <img
-                      src={`https://images.unsplash.com/photo-${index === 0 ? '1454165833767-129670c0276b' : index === 1 ? '1504384308090-c894fdcc538d' : '1460925895917-afdab827c52f'}?auto=format&fit=crop&q=80&w=1600`}
+                      src={index === 0 ? "/assets/strategy-consulting.jpg" : `https://images.unsplash.com/photo-${index === 1 ? '1504384308090-c894fdcc538d' : '1460925895917-afdab827c52f'}?auto=format&fit=crop&q=80&w=1600`}
                       alt={service.title}
                       className="w-full h-full object-cover grayscale md:group-hover:grayscale-0 transition-all duration-1000 md:group-hover:scale-105"
                     />
                   </div>
-                  
-                  <motion.div 
+
+                  <motion.div
                     animate={{ y: [0, -15, 0] }}
                     transition={{ duration: 4, repeat: Infinity }}
                     className="absolute -bottom-10 -right-10 lg:right-[-40px] glass p-8 md:p-12 rounded-[2.5rem] shadow-2xl border border-white z-20 hidden sm:block"
@@ -143,7 +142,7 @@ export const Services: React.FC = () => {
       <section className="mt-32 md:mt-64 py-32 md:py-56 bg-brand-navy relative w-full px-6 md:px-12 lg:px-20 xl:px-32">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')] opacity-[0.03] pointer-events-none"></div>
         <div className="w-full text-center relative z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -155,7 +154,7 @@ export const Services: React.FC = () => {
             <h2 className="serif text-5xl md:text-8xl lg:text-[10rem] font-black text-white mb-12 md:mb-20 italic tracking-tighter">
               Clinical Execution.
             </h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20">
               {[
                 { step: '01', title: 'Audit & Diagnostic', desc: 'Surgical extraction of current performance bottlenecks and industrial waste.' },
