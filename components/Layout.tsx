@@ -82,9 +82,9 @@ const Navbar: React.FC = () => {
           className="absolute top-0 left-0 right-0 h-[3px] bg-brand-gold origin-left" 
         />
 
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+        <div className="w-full px-6 md:px-12 lg:px-16 xl:px-20">
           <div className="flex justify-between items-center">
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-12">
               <Link to="/" className="flex items-center gap-3 group">
                 <motion.div 
                   whileHover={{ scale: 1.05, rotate: 5 }}
@@ -103,11 +103,11 @@ const Navbar: React.FC = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-gold opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-gold"></span>
                 </div>
-                <span className="text-[8px] font-black uppercase tracking-widest text-slate-500">Systems Operational</span>
+                <span className="text-[8px] font-black uppercase tracking-widest text-slate-500 whitespace-nowrap">Systems Operational</span>
               </div>
             </div>
 
-            <div className="hidden lg:flex items-center gap-2">
+            <div className="hidden lg:flex items-center gap-4">
               <div className="flex items-center gap-1 bg-brand-light/50 p-1 rounded-full border border-slate-100/50 mr-6">
                 {navLinks.map((link) => (
                   <NavLink 
@@ -236,7 +236,7 @@ const Footer: React.FC = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')] opacity-[0.02]"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-6 md:px-12 lg:px-16 xl:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 mb-24 pb-20 border-b border-slate-800/50">
           <div className="lg:col-span-5 space-y-10">
             <Link to="/" className="flex items-center gap-3 group">
@@ -268,15 +268,6 @@ const Footer: React.FC = () => {
                   </span>
                 </motion.a>
               ))}
-            </div>
-            
-            <div className="pt-6">
-              <div className="flex items-center gap-4 p-5 bg-slate-900/50 rounded-2xl border border-slate-800/50 w-fit">
-                <ShieldCheck className="text-brand-gold" size={24} />
-                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">
-                  Global Compliance & <br /> Data Sovereignity Active
-                </p>
-              </div>
             </div>
           </div>
 
@@ -320,24 +311,23 @@ const Footer: React.FC = () => {
                   Join
                 </motion.button>
               </div>
-              <p className="text-[9px] text-slate-700 font-bold uppercase tracking-widest px-2">
-                By joining, you agree to our strict non-disclosure terms.
-              </p>
             </form>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-16 border-b border-slate-800/50">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 py-16 border-b border-slate-800/50">
           {[
             { city: 'New York', region: 'Americas', active: true },
             { city: 'London', region: 'EMEA', active: true },
             { city: 'Singapore', region: 'APAC', active: true },
-            { city: 'Dubai', region: 'MENA', active: true }
+            { city: 'Dubai', region: 'MENA', active: true },
+            { city: 'Tokyo', region: 'APAC', active: true },
+            { city: 'Sydney', region: 'APAC', active: true }
           ].map((hub, i) => (
             <div key={i} className="flex flex-col gap-2 group">
               <div className="flex items-center gap-3">
                 <div className={`w-2 h-2 rounded-full ${hub.active ? 'bg-brand-gold animate-pulse' : 'bg-slate-800'}`}></div>
-                <span className="text-white font-black text-sm tracking-tight">{hub.city}</span>
+                <span className="text-white font-black text-sm tracking-tight whitespace-nowrap">{hub.city}</span>
               </div>
               <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-600 group-hover:text-brand-gold transition-colors">{hub.region} Command</span>
             </div>
@@ -348,9 +338,6 @@ const Footer: React.FC = () => {
           <div className="flex flex-col items-center lg:items-start gap-3">
             <p className="text-[10px] font-black text-slate-600 tracking-[0.2em] uppercase">
               © 2025 StratEdge International Group. All Proprietary Rights Reserved.
-            </p>
-            <p className="text-[9px] font-bold text-slate-800 uppercase tracking-widest">
-              Security Protocol v4.2.1-Deploy // Private Intelligence Infrastructure
             </p>
           </div>
           

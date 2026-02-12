@@ -18,26 +18,26 @@ const staggerContainer = {
 
 export const Services: React.FC = () => {
   return (
-    <div className="bg-white min-h-screen pt-32 pb-20 md:pb-32 overflow-hidden">
+    <div className="bg-white min-h-screen pt-32 pb-20 md:pb-32 overflow-hidden w-full">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
-        <div className="absolute top-[20%] right-[-10%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-brand-navy/5 rounded-full blur-[120px] opacity-60"></div>
+        <div className="absolute top-[20%] right-[-10%] w-[400px] md:w-[800px] h-[400px] md:h-[800px] bg-brand-navy/5 rounded-full blur-[150px] opacity-60"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-6 md:px-12 lg:px-20 xl:px-32">
         <motion.div 
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
-          className="mb-20 md:mb-32"
+          className="mb-24 md:mb-40"
         >
           <SectionTitle
             badge="Expertise & Intelligence"
             title="Strategic Architecture."
-            subtitle="We provide the high-octane intelligence usually reserved for global conglomerates, re-engineered for the agility of the mid-market."
+            subtitle="Providing high-octane intelligence usually reserved for global conglomerates, re-engineered for the agility of the mid-market."
           />
         </motion.div>
 
-        <div className="space-y-24 md:space-y-48">
+        <div className="space-y-32 md:space-y-64">
           {SERVICES.map((service, index) => (
             <motion.section
               key={service.id}
@@ -45,92 +45,92 @@ export const Services: React.FC = () => {
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={staggerContainer}
-              className={`flex flex-col lg:flex-row items-center gap-10 lg:gap-24 ${
+              className={`flex flex-col lg:flex-row items-center gap-16 lg:gap-32 w-full ${
                 index % 2 !== 0 ? 'lg:flex-row-reverse' : ''
               }`}
             >
-              <div className="w-full lg:w-1/2 relative">
+              <div className="w-full lg:w-3/5 relative">
                 <motion.div 
                   variants={fadeUp}
                   className="relative group"
                 >
-                  <div className="absolute -inset-4 md:-inset-6 bg-brand-light rounded-[2.5rem] md:rounded-[3rem] -z-10 group-hover:bg-brand-gold/5 transition-colors duration-700"></div>
-                  <div className="relative aspect-[4/3] md:aspect-[4/5] overflow-hidden rounded-[2rem] md:rounded-[2.5rem] shadow-2xl border-4 border-white">
+                  <div className="absolute -inset-8 bg-brand-light rounded-[4rem] -z-10 group-hover:bg-brand-gold/5 transition-colors duration-700"></div>
+                  <div className="relative aspect-[16/9] lg:aspect-[16/10] overflow-hidden rounded-[3rem] shadow-2xl border-8 border-white">
                     <img
-                      src={`https://images.unsplash.com/photo-${index === 0 ? '1454165833767-129670c0276b' : index === 1 ? '1504384308090-c894fdcc538d' : '1460925895917-afdab827c52f'}?auto=format&fit=crop&q=80&w=1200`}
+                      src={`https://images.unsplash.com/photo-${index === 0 ? '1454165833767-129670c0276b' : index === 1 ? '1504384308090-c894fdcc538d' : '1460925895917-afdab827c52f'}?auto=format&fit=crop&q=80&w=1600`}
                       alt={service.title}
                       className="w-full h-full object-cover grayscale md:group-hover:grayscale-0 transition-all duration-1000 md:group-hover:scale-105"
                     />
                   </div>
                   
                   <motion.div 
-                    animate={{ y: [0, -10, 0] }}
+                    animate={{ y: [0, -15, 0] }}
                     transition={{ duration: 4, repeat: Infinity }}
-                    className="absolute -bottom-6 -right-6 md:-bottom-10 md:-right-10 lg:right-[-20px] glass p-4 md:p-8 rounded-2xl md:rounded-3xl shadow-2xl border border-white z-20 hidden sm:block"
+                    className="absolute -bottom-10 -right-10 lg:right-[-40px] glass p-8 md:p-12 rounded-[2.5rem] shadow-2xl border border-white z-20 hidden sm:block"
                   >
-                    <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 md:w-12 md:h-12 bg-brand-gold rounded-xl md:rounded-2xl flex items-center justify-center text-white">
-                        <Zap size={20} />
+                    <div className="flex items-center gap-6">
+                      <div className="w-16 h-16 bg-brand-gold rounded-3xl flex items-center justify-center text-white">
+                        <Zap size={32} />
                       </div>
                       <div>
-                        <div className="text-lg md:text-xl font-black text-brand-navy">Proven</div>
-                        <div className="text-[8px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest">ROI Delivery</div>
+                        <div className="text-2xl font-black text-brand-navy">Proven</div>
+                        <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Global Standards</div>
                       </div>
                     </div>
                   </motion.div>
                 </motion.div>
               </div>
 
-              <div className="w-full lg:w-1/2 space-y-8 md:space-y-10">
-                <motion.div variants={fadeUp} className="space-y-4 md:space-y-6">
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-navy text-white rounded-xl md:rounded-2xl flex items-center justify-center shadow-xl mb-2 md:mb-4">
-                    {React.cloneElement(ICONS[service.icon as keyof typeof ICONS], { className: "w-8 h-8 text-brand-gold" })}
+              <div className="w-full lg:w-2/5 space-y-10 md:space-y-16">
+                <motion.div variants={fadeUp} className="space-y-6 md:space-y-10">
+                  <div className="w-16 h-16 md:w-24 md:h-24 bg-brand-navy text-white rounded-3xl flex items-center justify-center shadow-2xl mb-4">
+                    {React.cloneElement(ICONS[service.icon as keyof typeof ICONS], { className: "w-10 h-10 md:w-14 md:h-14 text-brand-gold" })}
                   </div>
-                  <h3 className="serif text-4xl lg:text-6xl font-black text-brand-navy tracking-tight leading-tight">
+                  <h3 className="serif text-5xl lg:text-7xl xl:text-8xl font-black text-brand-navy tracking-tight leading-[0.9]">
                     {service.title}
                   </h3>
-                  <p className="text-lg md:text-xl text-slate-500 leading-relaxed font-medium max-w-xl">
+                  <p className="text-xl md:text-3xl text-slate-500 leading-relaxed font-medium">
                     {service.description}
                   </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10">
-                  <motion.div variants={fadeUp} className="space-y-4 md:space-y-6">
-                    <h4 className="text-[10px] font-black uppercase text-brand-gold tracking-[0.2em]">Target Profiles</h4>
-                    <ul className="space-y-3 md:space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-16">
+                  <motion.div variants={fadeUp} className="space-y-6 md:space-y-10">
+                    <h4 className="text-xs font-black uppercase text-brand-gold tracking-[0.3em]">Target Profiles</h4>
+                    <ul className="space-y-5">
                       {service.whoItIsFor.map((item, i) => (
-                        <li key={i} className="flex items-start gap-3 group">
-                          <div className="w-5 h-5 rounded-full bg-brand-gold/10 flex items-center justify-center mt-0.5 group-hover:bg-brand-gold transition-colors">
-                            <CheckCircle2 size={12} className="text-brand-gold group-hover:text-white" />
+                        <li key={i} className="flex items-start gap-4 group">
+                          <div className="w-6 h-6 rounded-full bg-brand-gold/10 flex items-center justify-center mt-1 group-hover:bg-brand-gold transition-colors">
+                            <CheckCircle2 size={16} className="text-brand-gold group-hover:text-white" />
                           </div>
-                          <span className="text-slate-600 font-bold text-sm leading-snug">{item}</span>
+                          <span className="text-slate-600 font-bold text-lg leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
                   </motion.div>
 
-                  <motion.div variants={fadeUp} className="space-y-4 md:space-y-6">
-                    <h4 className="text-[10px] font-black uppercase text-brand-gold tracking-[0.2em]">Key Milestones</h4>
-                    <ul className="space-y-3 md:space-y-4">
+                  <motion.div variants={fadeUp} className="space-y-6 md:space-y-10">
+                    <h4 className="text-xs font-black uppercase text-brand-gold tracking-[0.3em]">Key Milestones</h4>
+                    <ul className="space-y-5">
                       {service.outcomes.map((item, i) => (
-                        <li key={i} className="flex items-start gap-3 group">
-                          <div className="w-5 h-5 rounded-full bg-brand-navy flex items-center justify-center mt-0.5">
-                            <Layers size={10} className="text-white" />
+                        <li key={i} className="flex items-start gap-4 group">
+                          <div className="w-6 h-6 rounded-full bg-brand-navy flex items-center justify-center mt-1">
+                            <Layers size={14} className="text-white" />
                           </div>
-                          <span className="text-slate-600 font-bold text-sm leading-snug">{item}</span>
+                          <span className="text-slate-600 font-bold text-lg leading-snug">{item}</span>
                         </li>
                       ))}
                     </ul>
                   </motion.div>
                 </div>
 
-                <motion.div variants={fadeUp} className="pt-4 md:pt-8">
+                <motion.div variants={fadeUp} className="pt-8">
                   <Link
                     to="/book"
-                    className="inline-flex items-center justify-center w-full sm:w-auto gap-4 bg-brand-gold text-white px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-xs md:text-sm uppercase tracking-widest hover:bg-brand-gold/90 transition-all shadow-xl group"
+                    className="inline-flex items-center justify-center w-full sm:w-auto gap-6 bg-brand-gold text-white px-12 py-6 rounded-2xl font-black text-lg uppercase tracking-widest hover:bg-brand-gold/90 transition-all shadow-2xl group"
                   >
                     Initiate Engagement
-                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                   </Link>
                 </motion.div>
               </div>
@@ -139,62 +139,39 @@ export const Services: React.FC = () => {
         </div>
       </div>
 
-      <section className="mt-24 md:mt-48 py-20 md:py-32 bg-brand-navy relative">
+      {/* Expanded Clinical Approach Banner */}
+      <section className="mt-32 md:mt-64 py-32 md:py-56 bg-brand-navy relative w-full px-6 md:px-12 lg:px-20 xl:px-32">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/grid-me.png')] opacity-[0.03] pointer-events-none"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="w-full text-center relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-3xl mx-auto"
+            className="w-full"
           >
-            <div className="inline-block px-4 py-1.5 mb-6 md:mb-8 text-[9px] md:text-[10px] font-black tracking-[0.3em] text-brand-gold uppercase border border-brand-gold/20 rounded-full">
+            <div className="inline-block px-5 py-2 mb-10 text-xs font-black tracking-[0.4em] text-brand-gold uppercase border border-brand-gold/30 rounded-full">
               The StratEdge Engine
             </div>
-            <h2 className="serif text-4xl md:text-7xl font-black text-white mb-6 md:mb-10 italic">
-              Our Clinical Approach.
+            <h2 className="serif text-5xl md:text-8xl lg:text-[10rem] font-black text-white mb-12 md:mb-20 italic tracking-tighter">
+              Clinical Execution.
             </h2>
-            <p className="text-lg md:text-xl text-slate-400 mb-12 md:mb-16 leading-relaxed font-medium">
-              We don't sell billable hours. We sell transformation through a three-stage industrial process.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-20">
               {[
-                { step: '01', title: 'Audit & Diagnostic', desc: 'Surgical extraction of current performance bottlenecks.' },
-                { step: '02', title: 'Tactical Design', desc: 'Blueprint generation for high-impact operational shifts.' },
-                { step: '03', title: 'Imbedded Execution', desc: 'Hands-on implementation to ensure target ROI is met.' }
+                { step: '01', title: 'Audit & Diagnostic', desc: 'Surgical extraction of current performance bottlenecks and industrial waste.' },
+                { step: '02', title: 'Tactical Design', desc: 'Blueprint generation for high-impact operational shifts and capital optimization.' },
+                { step: '03', title: 'Imbedded Execution', desc: 'Hands-on implementation by senior partners to ensure target ROI is met.' }
               ].map((item, i) => (
-                <div key={i} className="group text-left p-8 md:p-10 bg-slate-900 rounded-[2rem] md:rounded-[2.5rem] border border-slate-800 hover:border-brand-gold transition-all">
-                  <div className="text-3xl md:text-4xl font-black text-brand-gold mb-4 md:mb-6 opacity-30 group-hover:opacity-100 transition-opacity italic tracking-tighter">{item.step}</div>
-                  <h4 className="text-white font-black text-lg md:text-xl mb-3 md:mb-4 tracking-tight">{item.title}</h4>
-                  <p className="text-slate-500 text-sm font-medium leading-relaxed">{item.desc}</p>
+                <div key={i} className="group text-left p-12 md:p-20 bg-slate-900 rounded-[4rem] border border-slate-800 hover:border-brand-gold transition-all">
+                  <div className="text-5xl md:text-7xl font-black text-brand-gold mb-8 md:mb-12 opacity-30 group-hover:opacity-100 transition-opacity italic tracking-tighter">{item.step}</div>
+                  <h4 className="text-white font-black text-2xl md:text-4xl mb-6 md:mb-10 tracking-tight">{item.title}</h4>
+                  <p className="text-slate-500 text-lg md:text-2xl font-medium leading-relaxed">{item.desc}</p>
                 </div>
               ))}
             </div>
           </motion.div>
         </div>
       </section>
-
-      <div className="max-w-5xl mx-auto px-4 mt-24 md:mt-48">
-        <motion.div 
-          whileInView={{ scale: [0.95, 1], opacity: [0, 1] }}
-          className="bg-brand-gold rounded-[3rem] md:rounded-[4rem] p-10 md:p-16 lg:p-24 text-center text-white relative overflow-hidden shadow-2xl"
-        >
-          <div className="absolute top-0 right-0 p-8 opacity-10 hidden sm:block"><Sparkles size={200} /></div>
-          <h2 className="serif text-3xl md:text-7xl font-black mb-6 md:mb-8 leading-tight italic">
-            Ready to <br className="hidden md:block" /> scale differently?
-          </h2>
-          <p className="text-brand-light/90 text-lg md:text-xl mb-8 md:mb-12 max-w-xl mx-auto font-medium">
-            Contact a senior partner to discuss which strategic module aligns with your current quarter objectives.
-          </p>
-          <Link 
-            to="/contact" 
-            className="inline-block w-full sm:w-auto bg-brand-navy text-white px-10 md:px-16 py-4 md:py-6 rounded-2xl font-black text-base md:text-lg hover:bg-white hover:text-brand-navy transition-all transform hover:-translate-y-1"
-          >
-            Speak with an Expert
-          </Link>
-        </motion.div>
-      </div>
     </div>
   );
 };
